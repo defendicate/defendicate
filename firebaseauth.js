@@ -1,18 +1,9 @@
  // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
- import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
- import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+ import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js"
  
  const firebaseConfig = {
- // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
     apiKey: "AIzaSyCxeuDcHj9X7EXgkmi7pTD0zASdXlVyD_E",
     authDomain: "defendicate-1f7bc.firebaseapp.com",
     projectId: "defendicate-1f7bc",
@@ -25,12 +16,8 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
- };
 
- // Initialize Firebase
- const app = initializeApp(firebaseConfig);
-
- function showMessage(message, divId){
+   function showMessage(message, divId){
     var messageDiv=document.getElementById(divId);
     messageDiv.style.display="block";
     messageDiv.innerHTML=message;
@@ -39,6 +26,7 @@
         messageDiv.style.opacity=0;
     },5000);
  }
+ 
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -62,7 +50,7 @@
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='index.html';
+            window.location.href='login1.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);
