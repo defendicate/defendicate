@@ -2,7 +2,8 @@
  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
  import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js"
- 
+ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+
  const firebaseConfig = {
     apiKey: "AIzaSyCxeuDcHj9X7EXgkmi7pTD0zASdXlVyD_E",
     authDomain: "defendicate-1f7bc.firebaseapp.com",
