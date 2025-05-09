@@ -391,4 +391,29 @@
         $(this).addClass("active");
     });
 
+    const postsPerPage = 5;
+const posts = $(".card-list-posts");
+const totalPages = Math.ceil(posts.length / postsPerPage);
+
+function showPage(page) {
+    posts.hide();
+    const start = (page - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    posts.slice(start, end).show();
+}
+
+// Initialize with first page
+showPage(1);
+
+// Pagination click
+$(".pagination").on("click", ".page-link", function (e) {
+    e.preventDefault();
+    const page = parseInt($(this).data("page"));
+    if (!isNaN(page)) {
+        showPage(page);
+        $(".page-link").removeClass("active");
+        $(this).addClass("active");
+    }
+});
+
 })(jQuery);
